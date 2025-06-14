@@ -2,7 +2,7 @@ import AnalysisSection from "./components/analysisSection";
 
 function App() {
   return (
-    <main className="flex flex-col justify-around lg:flex-row w-screen min-h-screen lg:p-12 p-8 gap-12">
+    <main className="flex flex-col lg:flex-row w-screen min-h-screen lg:p-12 px-8 py-4 gap-24 lg:gap-0">
       <div className="lg:w-1/2 flex flex-col justify-center lg:pl-12">
         <h1 className="font-black text-4xl lg:text-7xl">
           EmotiScan <span className="text-[#6C63FF]">.</span>
