@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import * as faceapi from "face-api.js";
 import { loadModels } from "../utils/loadModels";
+import { emotionLabels } from "../data/emotion";
 
 const AnalysisSection = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -35,8 +36,10 @@ const AnalysisSection = () => {
                   main.expressions
                 ).sort((a, b) => b[1] - a[1])[0];
 
+                const label = emotionLabels[mainEmotion] || mainEmotion;
+
                 console.log("Emoção detectada:", mainEmotion, confidence);
-                setEmotion(`${mainEmotion} (${Math.round(confidence * 100)}%)`);
+                setEmotion(`Detectamos que você está ${label}.`);
               } else {
                 console.log("Nenhum rosto detectado");
               }
@@ -66,7 +69,7 @@ const AnalysisSection = () => {
       </div>
 
       <div className="bg-white rounded-md p-2 w-full text-center text-lg font-medium">
-        {emotion ? `Emoção detectada: ${emotion}` : "Detectando..."}
+        {emotion}
       </div>
     </section>
   );
