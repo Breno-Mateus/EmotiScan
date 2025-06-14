@@ -58,7 +58,7 @@ const AnalysisSection = () => {
   }, []);
 
   return (
-    <section className="flex flex-col gap-4 text-black w-1/2 justify-center items-center">
+    <section className="flex flex-col gap-4 text-black lg:w-1/2 justify-center items-center">
       <div className="bg-white rounded-md p-2 w-full">
         <video
           ref={videoRef}
@@ -68,7 +68,7 @@ const AnalysisSection = () => {
         />
       </div>
 
-      <div className="bg-white rounded-md p-2 w-full text-center text-lg font-medium">
+      <div className="bg-white rounded-md p-2 w-full text-center text-sm lg:text-lg font-medium">
         {emotion}
       </div>
     </section>
